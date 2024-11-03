@@ -1,0 +1,159 @@
+.main {
+  display: flex;
+}
+
+.rightContent {
+  background-color: black;
+  width: 83%;
+}
+
+.rightContentConfiguracion {
+  background-color: black;
+  width: 83%;
+  height: 100vh;
+  text-align: center;
+  margin: auto;
+}
+
+.sidebar {
+  background-color: #c62929;
+  width: 17%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.button {
+  height: 50px;
+  padding: 15px;
+  margin: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: lightgray;
+  transition: all .3s ease;
+}
+
+.button:hover {
+  color: white;
+}
+
+.buttonFocused {
+  height: 50px;
+  padding: 15px;
+  margin: 10px;
+  color: white;
+  border-radius: 100px;
+  border-color: white;
+  border-width: 10px;
+  background-color: #de5353;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.movieItem {
+  position: relative;
+  height: 12rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.movieItem:hover {
+  transform: scale(1.02);
+}
+
+.movieItemFocused {
+  position: relative;
+  height: 12rem;
+  border-radius: 10px;
+  transform: scale(1.02);
+  cursor: pointer;
+  box-shadow: 0 8px 8px -3px #568;
+}
+
+.movieDetails {
+  display: flex;
+  justify-content: space-around;
+  height: 400px;
+  margin: 20px 20px 0 20px;
+  background-color: black;
+}
+
+.movieData {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 10px 20px;
+  justify-content: space-around;}
+
+.moviePoster {
+  position: relative;
+  width: 40%;
+}
+
+.movieDetails h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.movieDetails h4 {
+  margin-bottom: 20px;
+}
+
+.movieDetailsButton {
+  cursor: pointer;
+  border-radius: 6px;
+  background: #c62929;
+  width: fit-content;
+  padding: 10px 20px;
+  transition: all .3s ease;
+}
+
+.movieDetailsButton:hover {
+  background-color: #de5353;
+}
+
+.destacadosGrid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  gap: 15px;
+  margin: 10px;
+}
+
+.gridItem {
+  position: relative;
+  height: 18rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.gridItem:hover {
+  transform: scale(1.02);
+}
+
+.gridItemFocused {
+  position: relative;
+  height: 18rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transform: scale(1.02);
+  box-shadow: 0 8px 8px -3px #568;
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.notFoundContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  gap: 30px;
+}
