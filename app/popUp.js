@@ -2,8 +2,6 @@ import Modal from "react-modal";
 import Image from "next/image";
 import styles from "@/app/page.module.css";
 
-Modal.setAppElement('#root');
-
 export default function PopUp ({ modalIsOpen, closeModal, modalContent }) {
 
     const ModalContent = ({ modalContent }) => {

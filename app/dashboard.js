@@ -6,12 +6,15 @@ import styles from "./page.module.css";
 import {useEffect, useState} from "react";
 import RestOfPage from "@/app/RestOfPage";
 import PopUp from "@/app/popUp";
+import Modal from "react-modal";
 
 // Iniciamos la Navegación Espacial
 init({
     debug: false,
     visualDebug: false,
 });
+
+Modal.setAppElement('#root')
 
 export default function Dashboard({ movieSlide1, movieSlide2, movieSlide3, movieSlide4, movieSlide5, movieSlide6 }) {
 
@@ -51,7 +54,7 @@ export default function Dashboard({ movieSlide1, movieSlide2, movieSlide3, movie
 
     return (
         <FocusContext.Provider value={focusKey}>
-            <div ref={ref} className={styles.main} id={'root'}>
+            <div ref={ref} className={styles.main}>
                 <Sidebar
                     setSection={setSection}
                     setSelectedMovie={setSelectedMovie}
