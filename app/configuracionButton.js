@@ -2,7 +2,7 @@ import {updateRtl, useFocusable} from "@noriginmedia/norigin-spatial-navigation"
 import styles from "@/app/page.module.css";
 import {useState} from "react";
 
-export default function ConfiguracionButton ({ flagRtl, setReverseOrder }) {
+export default function ConfiguracionButton ({ flagRtl }) {
 
     // Se usó esta variable de estado para el handleo onEnterPress de la Navegación Espacial: para saber onEnter cuál es el botón
     // seleccionado por el usuario.
@@ -19,14 +19,8 @@ export default function ConfiguracionButton ({ flagRtl, setReverseOrder }) {
         focusSelf()
 
         // Modificamos la preferencia según en qué botón apretó el usuario
-        if (rtl) {
-            updateRtl(true)
-            setReverseOrder(true)
-        }
-        else {
-            updateRtl(false)
-            setReverseOrder(false)
-        }
+        updateRtl(rtl)
+
         // Informamos el éxito de la operación
         alert('Cambio realizado exitosamente.')
     }

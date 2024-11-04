@@ -10,7 +10,7 @@ import Modal from "react-modal";
 
 // Iniciamos la Navegación Espacial
 init({
-    debug: true,
+    debug: false,
     visualDebug: false,
     distanceCalculationMethod: 'center',
 });
@@ -24,7 +24,6 @@ export default function Dashboard({ movieSlide1, movieSlide2, movieSlide3, movie
     const [section, setSection] = useState('Películas');
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [modalContent, setModalContent] = useState(null);
-    const [reverseOrder, setReverseOrder] = useState(false);
 
     const { ref, focusKey, focusSelf } = useFocusable({
         isFocusBoundary: true,
@@ -46,7 +45,6 @@ export default function Dashboard({ movieSlide1, movieSlide2, movieSlide3, movie
             case 'Configuración': return setFocus("sn:focusable-item-6");
         }
     }
-    const handleReverse = rtl => setReverseOrder(rtl)
 
     // Foco en el primer componente focusable ("Películas" del sidebar)
     useEffect(() => {
@@ -71,7 +69,7 @@ export default function Dashboard({ movieSlide1, movieSlide2, movieSlide3, movie
                         firstItemToShow={firstItemsToShow}
                     />
                     <RestOfPage
-                        movieSlide1={reverseOrder? movieSlide1.reverse() : movieSlide1}
+                        movieSlide1={movieSlide1}
                         movieSlide2={movieSlide2}
                         movieSlide3={movieSlide3}
                         movieSlide4={movieSlide4}
@@ -81,8 +79,6 @@ export default function Dashboard({ movieSlide1, movieSlide2, movieSlide3, movie
                         handleMovieHover={handleMovieHover}
                         section={section}
                         openModal={openModal}
-                        reverseOrder={reverseOrder}
-                        setReverseOrder={handleReverse}
                     />
                 </div>
             </FocusContext.Provider>

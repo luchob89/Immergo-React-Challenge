@@ -9,7 +9,7 @@ import MovieItem from "@/app/movieItem";
 import {useFocusable, FocusContext} from "@noriginmedia/norigin-spatial-navigation";
 import {useEffect, useReducer, useState} from "react";
 
-export default function MoviesSlide({ moviesArray, handleMovieHover, openModal, reverseOrder }) {
+export default function MoviesSlide({ moviesArray, handleMovieHover, openModal }) {
 
     const { ref, focusKey } = useFocusable();
 
