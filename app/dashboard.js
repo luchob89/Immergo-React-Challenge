@@ -40,10 +40,10 @@ export default function Dashboard({ movieSlide1, movieSlide2, movieSlide3, movie
         setModalContent(null)
         setModalIsOpen(false)
         switch (section) {
-            case 'Películas': return setFocus("sn:focusable-item-5");
-            case 'Series': return setFocus("sn:focusable-item-7");
-            case 'Destacados': return setFocus("sn:focusable-item-9");
-            case 'Configuración': return setFocus("sn:focusable-item-11");
+            case 'Películas': return setFocus("sn:focusable-item-3");
+            case 'Series': return setFocus("sn:focusable-item-4");
+            case 'Destacados': return setFocus("sn:focusable-item-5");
+            case 'Configuración': return setFocus("sn:focusable-item-6");
         }
     }
     const handleReverse = rtl => setReverseOrder(rtl)
