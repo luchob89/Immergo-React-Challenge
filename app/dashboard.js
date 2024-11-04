@@ -1,6 +1,6 @@
 "use client";
 
-import {init, useFocusable, FocusContext} from '@noriginmedia/norigin-spatial-navigation';
+import {init, useFocusable, FocusContext, setFocus} from '@noriginmedia/norigin-spatial-navigation';
 import Sidebar from "@/app/sidebar";
 import styles from "./page.module.css";
 import {useEffect, useState} from "react";
@@ -10,8 +10,9 @@ import Modal from "react-modal";
 
 // Iniciamos la Navegación Espacial
 init({
-    debug: false,
+    debug: true,
     visualDebug: false,
+    distanceCalculationMethod: 'center',
 });
 
 Modal.setAppElement('#root')
@@ -25,7 +26,9 @@ export default function Dashboard({ movieSlide1, movieSlide2, movieSlide3, movie
     const [modalContent, setModalContent] = useState(null);
     const [reverseOrder, setReverseOrder] = useState(false);
 
-    const { ref, focusKey, focusSelf } = useFocusable();
+    const { ref, focusKey, focusSelf } = useFocusable({
+        isFocusBoundary: true,
+    });
 
     // Funciones de handleos
     const handleMovieHover = movie => setSelectedMovie(movie);
@@ -36,6 +39,12 @@ export default function Dashboard({ movieSlide1, movieSlide2, movieSlide3, movie
     const closeModal       = () => {
         setModalContent(null)
         setModalIsOpen(false)
+        switch (section) {
+            case 'Películas': return setFocus("sn:focusable-item-5");
+            case 'Series': return setFocus("sn:focusable-item-7");
+            case 'Destacados': return setFocus("sn:focusable-item-9");
+            case 'Configuración': return setFocus("sn:focusable-item-11");
+        }
     }
     const handleReverse = rtl => setReverseOrder(rtl)
 
@@ -53,33 +62,35 @@ export default function Dashboard({ movieSlide1, movieSlide2, movieSlide3, movie
     }
 
     return (
-        <FocusContext.Provider value={focusKey}>
-            <div ref={ref} className={styles.main}>
-                <Sidebar
-                    setSection={setSection}
-                    setSelectedMovie={setSelectedMovie}
-                    firstItemToShow={firstItemsToShow}
-                />
-                <RestOfPage
-                    movieSlide1={reverseOrder? movieSlide1.reverse() : movieSlide1}
-                    movieSlide2={movieSlide2}
-                    movieSlide3={movieSlide3}
-                    movieSlide4={movieSlide4}
-                    movieSlide5={movieSlide5}
-                    movieSlide6={movieSlide6}
-                    selectedMovie={selectedMovie}
-                    handleMovieHover={handleMovieHover}
-                    section={section}
-                    openModal={openModal}
-                    reverseOrder={reverseOrder}
-                    setReverseOrder={handleReverse}
-                />
-            </div>
+        <>
+            <FocusContext.Provider value={focusKey}>
+                <div ref={ref} className={styles.main}>
+                    <Sidebar
+                        setSection={setSection}
+                        setSelectedMovie={setSelectedMovie}
+                        firstItemToShow={firstItemsToShow}
+                    />
+                    <RestOfPage
+                        movieSlide1={reverseOrder? movieSlide1.reverse() : movieSlide1}
+                        movieSlide2={movieSlide2}
+                        movieSlide3={movieSlide3}
+                        movieSlide4={movieSlide4}
+                        movieSlide5={movieSlide5}
+                        movieSlide6={movieSlide6}
+                        selectedMovie={selectedMovie}
+                        handleMovieHover={handleMovieHover}
+                        section={section}
+                        openModal={openModal}
+                        reverseOrder={reverseOrder}
+                        setReverseOrder={handleReverse}
+                    />
+                </div>
+            </FocusContext.Provider>
             <PopUp
                 modalIsOpen={modalIsOpen}
                 closeModal={closeModal}
                 modalContent={modalContent}
             />
-        </FocusContext.Provider>
+        </>
     );
 }

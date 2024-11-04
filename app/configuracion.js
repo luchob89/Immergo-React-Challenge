@@ -9,7 +9,7 @@ export default function Configuracion ({ setReverseOrder }) {
     return (
         <FocusContext.Provider value={focusKey}>
             <div ref={ref} className={styles.rightContentConfiguracion}>
-                <h1 style={{marginTop: '5rem'}}>Preferencia de Navegación</h1>
+                <h1 style={{marginTop: '5rem', marginBottom: '2rem'}}>Preferencia de Navegación</h1>
                 <ConfiguracionButton flagRtl={false} setReverseOrder={setReverseOrder} />
                 <ConfiguracionButton flagRtl={true} setReverseOrder={setReverseOrder} />
             </div>

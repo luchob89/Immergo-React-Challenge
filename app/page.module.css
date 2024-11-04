@@ -4,20 +4,22 @@
 
 .rightContent {
   background-color: black;
-  width: 83%;
+  width: 85%;
 }
 
 .rightContentConfiguracion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: black;
-  width: 83%;
+  width: 85%;
   height: 100vh;
   text-align: center;
-  margin: auto;
 }
 
 .sidebar {
-  background-color: #c62929;
-  width: 17%;
+  background-color: #4d103b;
+  width: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,30 +48,59 @@
   border-radius: 100px;
   border-color: white;
   border-width: 10px;
-  background-color: #de5353;
+  background-color: #730f36;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.buttonConfig {
+  height: auto;
+  padding: 15px;
+  margin: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: lightgray;
+  width: 20%;
+  transition: all .3s ease;
+}
+
+.buttonConfig:hover {
+  color: white;
+}
+
+.buttonConfigFocused {
+  height: auto;
+  width: 20%;
+  padding: 15px;
+  margin: 10px;
+  color: white;
+  border-radius: 100px;
+  border-color: white;
+  border-width: 10px;
+  background-color: #730f36;
   font-size: 20px;
   cursor: pointer;
 }
 
 .movieItem {
   position: relative;
-  height: 12rem;
+  height: 14rem;
   border-radius: 10px;
   cursor: pointer;
   transition: all .3s ease;
 }
 
 .movieItem:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .movieItemFocused {
   position: relative;
-  height: 12rem;
+  height: 14rem;
   border-radius: 10px;
-  transform: scale(1.02);
+  transform: scale(1.03);
   cursor: pointer;
-  box-shadow: 0 8px 8px -3px #568;
+  box-shadow: 0 3px 10px -3px #730f36;
 }
 
 .movieDetails {
@@ -89,7 +120,7 @@
 
 .moviePoster {
   position: relative;
-  width: 40%;
+  width: 30%;
 }
 
 .movieDetails h1 {
@@ -104,14 +135,23 @@
 .movieDetailsButton {
   cursor: pointer;
   border-radius: 6px;
-  background: #c62929;
+  background: #4d103b;
+  width: fit-content;
+  padding: 10px 20px;
+  transition: all .3s ease;
+}
+
+.movieDetailsButtonFocused {
+  cursor: pointer;
+  border-radius: 6px;
+  background: #730f36;
   width: fit-content;
   padding: 10px 20px;
   transition: all .3s ease;
 }
 
 .movieDetailsButton:hover {
-  background-color: #de5353;
+  background-color: #730f36;
 }
 
 .destacadosGrid {
@@ -130,7 +170,7 @@
 }
 
 .gridItem:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .gridItemFocused {
@@ -138,8 +178,8 @@
   height: 18rem;
   border-radius: 10px;
   cursor: pointer;
-  transform: scale(1.02);
-  box-shadow: 0 8px 8px -3px #568;
+  transform: scale(1.03);
+  box-shadow: 0 3px 10px -3px #730f36;
 }
 
 .loadingContainer {

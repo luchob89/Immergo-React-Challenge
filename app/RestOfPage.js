@@ -16,7 +16,7 @@ export default function RestOfPage({ movieSlide1, movieSlide2, movieSlide3, movi
                 <MovieDetails selectedMovie={selectedMovie} openModal={openModal} />
                 <MoviesSlide moviesArray={movieSlide1} handleMovieHover={handleMovieHover} openModal={openModal} reverseOrder={reverseOrder} />
                 <MoviesSlide moviesArray={movieSlide2} handleMovieHover={handleMovieHover} openModal={openModal} reverseOrder={reverseOrder} />
-                <MoviesSlide moviesArray={movieSlide3} handleMovieHover={handleMovieHover} openModal={openModal} reverseOrder={reverseOrder}  />
+                <MoviesSlide moviesArray={movieSlide3} handleMovieHover={handleMovieHover} openModal={openModal} reverseOrder={reverseOrder} />
             </div>
         </FocusContext.Provider>
     )
@@ -36,7 +36,7 @@ export default function RestOfPage({ movieSlide1, movieSlide2, movieSlide3, movi
     if ( section === 'Destacados' ) return (
         <FocusContext.Provider value={focusKey}>
             <div ref={ref} className={styles.rightContent}>
-                <DestacadosGrid movieSlide6={movieSlide6} handleMovieHover={handleMovieHover} openModal={openModal} reverseOrder={reverseOrder}  />
+                <DestacadosGrid movieSlide6={movieSlide6} handleMovieHover={handleMovieHover} openModal={openModal} reverseOrder={reverseOrder} />
             </div>
         </FocusContext.Provider>
     )

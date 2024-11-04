@@ -34,7 +34,7 @@ export default function ConfiguracionButton ({ flagRtl, setReverseOrder }) {
     return <div
         ref={ref}
         onClick={ () => { handleClick(flagRtl) } }
-        className={focused ? styles.buttonFocused : styles.button}
+        className={focused ? styles.buttonConfigFocused : styles.buttonConfig}
     >
         { flagRtl ? 'Derecha a Izquierda' : 'Izquierda a Derecha' }
     </div>
